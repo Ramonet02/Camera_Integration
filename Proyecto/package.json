@@ -1,0 +1,23 @@
+{
+  "name": "healthysmile-halloween",
+  "version": "1.0.0",
+  "description": "HealthySmile Halloween - Cepillado de dientes digital interactivo con detección facial",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [
+    "p5js",
+    "mediapipe",
+    "electron",
+    "halloween",
+    "face-detection"
+  ],
+  "author": "Ramon",
+  "license": "MIT",
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.32",
+    "electron": "^41.0.3"
+  }
+}

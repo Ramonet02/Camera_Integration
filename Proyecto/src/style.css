@@ -1,0 +1,206 @@
+/* ===== Fuente Halloween ===== */
+@font-face {
+  font-family: 'Creepster';
+  src: url('../assets/fonts/Creepster-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== Reset y base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #4A1D5C;
+  font-family: 'Creepster', cursive;
+  color: #FFF5E6;
+  width: 1920px;
+  height: 1080px;
+}
+
+/* ===== Pantalla de inicio ===== */
+#start-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /* Gradiente púrpura cálido con ondas */
+  background:
+    linear-gradient(180deg, #6B2D7B 0%, #4A1D5C 55%, #E8A030 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Onda decorativa inferior (emula el corte ondulado de la referencia) */
+#start-screen::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #E8A030;
+  border-radius: 100% 100% 0 0 / 100% 100% 0 0;
+}
+
+#start-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+#logo-container {
+  margin-bottom: 16px;
+}
+
+#logo-pumpkin {
+  font-size: 110px;
+  display: inline-block;
+  animation: pumpkinFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 20px rgba(232, 160, 48, 0.5));
+}
+
+@keyframes pumpkinFloat {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-16px) rotate(4deg); }
+}
+
+#title {
+  font-family: 'Creepster', cursive;
+  font-size: 88px;
+  color: #FFF5E6;
+  text-shadow: 3px 3px 0 #4A1D5C, 0 0 30px rgba(232, 160, 48, 0.4);
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+#subtitle {
+  font-family: 'Creepster', cursive;
+  font-size: 44px;
+  color: #E8A030;
+  text-shadow: 2px 2px 0 #4A1D5C;
+  margin-bottom: 28px;
+}
+
+#description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  color: #FFF5E6;
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 36px auto;
+}
+
+/* Botón estilo referencia: coral redondeado */
+#start-btn {
+  font-family: 'Creepster', cursive;
+  font-size: 34px;
+  color: #FFF5E6;
+  background: #E85D3A;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 56px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 0 #B84428, 0 10px 24px rgba(232, 93, 58, 0.35);
+  letter-spacing: 2px;
+}
+
+#start-btn:hover {
+  background: #F06A45;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #B84428, 0 14px 30px rgba(232, 93, 58, 0.5);
+}
+
+#start-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #B84428, 0 4px 10px rgba(232, 93, 58, 0.3);
+}
+
+/* ===== Pantalla de carga ===== */
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, #6B2D7B 0%, #4A1D5C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+}
+
+#loading-content {
+  text-align: center;
+}
+
+#loading-spinner {
+  width: 90px;
+  height: 90px;
+  border: 8px solid rgba(255, 245, 230, 0.15);
+  border-top: 8px solid #E8A030;
+  border-right: 8px solid #E85D3A;
+  border-radius: 50%;
+  margin: 0 auto 28px auto;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#loading-text {
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+  color: #E8A030;
+  text-shadow: 0 0 12px rgba(232, 160, 48, 0.5);
+  animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ===== Canvas container ===== */
+#canvas-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+#canvas-container canvas {
+  display: block;
+}
+
+/* ===== HUD: cronómetro estilo referencia (caja naranja redondeada) ===== */
+#hud {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+#timer-display {
+  font-family: 'Creepster', cursive;
+  font-size: 50px;
+  color: #FFF5E6;
+  background: #E8A030;
+  padding: 8px 36px;
+  border-radius: 16px;
+  border: 3px solid #D4911F;
+  box-shadow: 0 6px 0 #C07A10, 0 10px 20px rgba(0,0,0,0.25);
+  letter-spacing: 5px;
+}
+
+/* ===== Utilities ===== */
+.hidden {
+  display: none !important;
+}

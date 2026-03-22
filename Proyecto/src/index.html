@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthySmile Halloween</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Pantalla de inicio ===== -->
+  <div id="start-screen">
+    <div id="start-content">
+      <div id="logo-container">
+        <span id="logo-pumpkin">&#127875;</span>
+      </div>
+      <h1 id="title">HealthySmile</h1>
+      <h2 id="subtitle">Halloween Edition</h2>
+      <p id="description">
+        Abre bien la boca y cepilla tus dientes con magia de Halloween.<br>
+        &iexcl;Aguanta todo el tiempo que puedas sin cerrarla!
+      </p>
+      <button id="start-btn">&#128128; Empezar &#128128;</button>
+    </div>
+  </div>
+
+  <!-- ===== Pantalla de carga ===== -->
+  <div id="loading-screen" class="hidden">
+    <div id="loading-content">
+      <div id="loading-spinner"></div>
+      <p id="loading-text">Preparando la magia...</p>
+    </div>
+  </div>
+
+  <!-- ===== Canvas p5.js ===== -->
+  <div id="canvas-container"></div>
+
+  <!-- ===== HUD: solo el cronómetro ===== -->
+  <div id="hud" class="hidden">
+    <div id="timer-display">00:00</div>
+  </div>
+
+</body>
+<script src="p5.min.js"></script>
+<script src="constants.js"></script>
+<script src="particle.js"></script>
+<script src="particleSystem.js"></script>
+<script src="faceDetector.js"></script>
+<script src="sketch.js"></script>
+</html>
